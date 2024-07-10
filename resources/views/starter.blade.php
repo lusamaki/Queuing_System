@@ -52,14 +52,26 @@
 <body>
     <div class="container">
         <h1>Let's get you Started!!</h1>
-        <div class="button">
-            <select>
-                <option selected disabled>Select A service</option>
-                <option value="general_doctor">see general doctor</option>
-                <option value="optician">See optician</option>
-                <option value="psychologist">See psychologist</option>
-            </select>
-        </div>
+        <form method="POST" action="/get_queue_details">
+            @csrf
+            <div class="button">
+                <select id="service_dropdown">
+                    <option selected disabled>Select a service</option>
+                    <option value="general_doctor">see general doctor</option>
+                    <option value="optician">See optician</option>
+                    <option value="psychologist">See psychologist</option>
+                </select>
+            </div> <br> <br>
+            <input type="text" id="service" name="service" hidden>
+            <input type="submit" value="Proceed" class="button">
+        </form>
     </div>
 </body>
+<script>
+    const dropDownElement = document.getElementById("service_dropdown");
+    const serviceElement = document.getElementById("service");
+    dropDownElement.addEventListener('change', function (){
+        serviceElement.value = dropDownElement.value;
+    });
+</script>
 </html>

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\QueueController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,6 +14,9 @@ Route::get('/login', [AuthController::class, 'getLoginView']);
 
 Route::post('/save_user', [AuthController::class, 'saveUser']);
 Route::post('/login_user', [AuthController::class, 'loginUser']);
+
+Route::post('/get_queue_details', [QueueController::class, 'getQueueDetailsView']);
+Route::post('/queue_view', [QueueController::class, 'getQueueView']);
 
 
 

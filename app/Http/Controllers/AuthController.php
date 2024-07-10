@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use PDO;
 
 class AuthController extends Controller
@@ -40,7 +41,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         $user = User::where('email', $credentials['email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
-            session(['user' => $user]);
+            Session::put('user', $user);
             echo '<script> alert("Successful login !"); </script>';
             return view('starter');
         } else {

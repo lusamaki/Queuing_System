@@ -55,9 +55,9 @@
         <div class="button">
             <select>
                 <option selected disabled>Select A service</option>
-                <option value="service1">Service 1</option>
-                <option value="service2">Service 2</option>
-                <option value="service3">Service 3</option>
+                <option value="general_doctor">see general doctor</option>
+                <option value="optician">See optician</option>
+                <option value="psychologist">See psychologist</option>
             </select>
         </div>
     </div>

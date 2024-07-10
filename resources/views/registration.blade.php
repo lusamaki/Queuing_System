@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -138,10 +138,13 @@
         <div class="shape"></div>
     </div>
 
-    <form id="login-form" method="POST" action="login_user">
+    <form method="POST" action="/save_user">
         @csrf
-        <h3>Login</h3>
-        <p>Sign in to continue.</p>
+        <h3>Register</h3>
+        <p>Already Registered? <a href="/login">Log in here.</a></p>
+    
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Username" id="username" required>
 
         <label for="email">Email</label>
         <input type="email" name="email" placeholder="Email" id="email" required>
@@ -149,11 +152,10 @@
         <label for="password">Password</label>
         <input type="password" name="password" placeholder="Password" id="password" required>
 
-        <button id="submit" type="submit">Log in</button>
+        <label for="password_confirmation">Confirm Password</label>
+        <input type="password" name="password_confirmation" placeholder="Confirm Password" id="password_confirmation" required>
 
-        <div class="form">
-            <p>Don't have an account ? <a href="registration">Register</a></p>
-        </div>
+        <button type="submit">Sign up</button>
     </form>
 </body>
 </html>

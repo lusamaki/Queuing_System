@@ -53,4 +53,12 @@ class QueueController extends Controller
             return view('starter');
         }
     }
+
+    public function leaveQueue(){
+        $username = Session::get('user.username');
+        $userOnQueue = Queue::where('username', $username)->first();
+        $userOnQueue->delete();
+        echo '<script> alert("You have left the queue !"); </script>';
+        return view('starter');
+    }
 }

@@ -130,7 +130,10 @@
                 <span class="label">Estimated Wait Time:</span>
                 <span class="value"> {{ $estimated_waiting_time }} mins</span>
             </p>
-            <button class="leaveQueueButton">Leave Queue</button>
+            <form method="POST" action="leave_queue">
+                @csrf
+                <input type="submit" value="Leave Queue" class="leaveQueueButton"></button>
+            </form>
         </section>
 
         <section class="feedback">

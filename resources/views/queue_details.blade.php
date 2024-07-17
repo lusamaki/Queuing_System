@@ -26,7 +26,7 @@
         h1 {
             font-size: 24px;
             margin-bottom: 10px;
-            color: #c0392b;
+            color: #ffa24b ;
         }
 
         p {
@@ -37,15 +37,15 @@
 
         #joinQueueButton {
             padding: 10px 20px;
-            background-color: #c0392b;
+            background-color: #ffa24b;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 5px;
         }
-
+        
         #joinQueueButton:hover {
-            background-color: #a83220;
+            background-color: #ffa24b;
         }
     </style>
 </head>
@@ -58,7 +58,13 @@
             @csrf
             <input type="text" name="service" value="{{ $service }}" hidden>
             <button type="submit" id="joinQueueButton"> Join Queue </a> </button>
+            <br> <br>
         </form>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" id= "logout"> Logout </button>
+        </form>
+        
     </div>
     <script src="script.js"></script>
 </body>

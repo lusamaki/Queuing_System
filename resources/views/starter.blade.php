@@ -42,11 +42,7 @@
             outline: none;
             padding-right: 15px;
         }
-        .button:after {
-            content: '▼';
-            font-size: 0.8em;
-            margin-left: 5px;
-        }
+       
     </style>
 </head>
 <body>
@@ -64,6 +60,11 @@
             </div> <br> <br>
             <input type="text" id="service" name="service" hidden>
             <input type="submit" value="Proceed" class="button">
+            <br> <br>
+        </form>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <input type="submit" value= "logout" class="button">
         </form>
     </div>
 </body>

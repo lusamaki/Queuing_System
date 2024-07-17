@@ -49,6 +49,14 @@ class AuthController extends Controller
             return view('login');
         }
     }
+    public function logout(Request $request)
+    {
+    
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        echo '<script> alert("Successful logout !"); </script>';
+        return view('login');
+    }
 
 
     public function getRegistrationView()

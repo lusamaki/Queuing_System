@@ -20,9 +20,8 @@ Route::post('/queue_view', [QueueController::class, 'getQueueView']);
 
 Route::post('/leave_queue', [QueueController::class, 'leaveQueue']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin', [AdminController::class, 'index']);
-});
+ Route::get('/admin', [AdminController::class, 'index']);
+
 
 
 

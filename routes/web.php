@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\QueueController;
+use App\Http\Controllers\ReceptionistController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,7 +24,9 @@ Route::post('/queue_view', [QueueController::class, 'getQueueView']);
 Route::post('/leave_queue', [QueueController::class, 'leaveQueue']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
  Route::get('/admin', [AdminController::class, 'index']);
-
+ Route::get('/manager', [ManagerController::class, 'index']);
+ Route::post('/reports', [ReportController::class, 'viewReports'])->name('reports');
+ Route::get('/receptionist', [ReceptionistController::class, 'index'])->name('receptionist.dashboard');
 
 
 

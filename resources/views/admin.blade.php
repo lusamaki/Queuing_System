@@ -58,26 +58,20 @@
             <h1>Admin Dashboard</h1>
         </div>
         <div class="grid-container">
-            <div class="card">
-                <div class="square"></div>
-                <h3>Login</h3>
-            </div>
+           
             <div class="card">
                 <div class="square"></div>
                 <h3>Register Users</h3>
             </div>
             <div class="card">
                 <div class="square"></div>
-                <h3>Manage Account</h3>
+                <h3>Manage Accounts</h3>
             </div>
             <div class="card">
                 <div class="square"></div>
                 <h3>Troubleshoot</h3>
             </div>
-            <div class="card">
-                <div class="square"></div>
-                <h3>Generate Reports</h3>
-            </div>
+          
             <div class="card">
                 <div class="square"></div>
                 <h3>View Queue</h3>
@@ -92,7 +86,7 @@
             </div>
             <div class="card">
                 <div class="square"></div>
-                <form action="{{ route('logout') }}" method="POST">
+                <form action="{{ route('reports') }}" method="POST">
                     @csrf
                     <button type="submit" id= "logout"> View Reports </button>
                 </form>
